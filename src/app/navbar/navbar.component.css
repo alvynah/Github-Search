@@ -1,0 +1,38 @@
+.highlight {
+    color: rgb(130, 209, 12, 0.8);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.navbar {
+    padding-bottom: 1%;
+    scroll-behavior: fixed;
+}
+
+.jumbotron {
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    padding-bottom: 0%;
+}
+
+.navbarItem {
+    box-shadow: 10px 10px 10px 0 grey;
+    margin-top: 1%;
+    margin-left: 20px;
+    border-radius: 5%;
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(130, 209, 12);
+}
+
+.icons {
+    margin-top: 1%;
+}
+
+.content {
+    margin: top 15px;
+}
