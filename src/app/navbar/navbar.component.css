@@ -18,7 +18,7 @@
 }
 
 .navbarItem {
-    box-shadow: 10px 10px 10px 0 grey;
+    box-shadow: 10px 10px 10px 0;
     margin-top: 1%;
     margin-left: 20px;
     border-radius: 5%;
@@ -26,7 +26,12 @@
 }
 
 button:hover {
+    transform: scale(1.05);
+}
+
+.active {
     background-color: rgb(130, 209, 12);
+    box-shadow: 0 10px 20px;
 }
 
 .icons {
