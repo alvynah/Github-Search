@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
     NgProgressModule.forRoot(),
     NgProgressHttpClientModule,
+    Ng2PageScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

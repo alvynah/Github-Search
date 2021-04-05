@@ -5,8 +5,7 @@
 }
 
 .navbar {
-    padding-bottom: 1%;
-    scroll-behavior: fixed;
+    height: auto;
 }
 
 .jumbotron {
@@ -14,8 +13,11 @@
     width: 100%;
     overflow: hidden;
     position: fixed;
-    padding-bottom: 0%;
     z-index: 1000;
+    height: auto;
+    padding-bottom: 0%;
+    padding-top: 1%;
+    margin: 0%;
 }
 
 .navbarItem {
@@ -37,8 +39,4 @@ button:hover {
 
 .icons {
     margin-top: 1%;
-}
-
-.content {
-    margin: top 15px;
 }

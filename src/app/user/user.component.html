@@ -12,7 +12,7 @@
             <div class="col-sm-1"></div>
         </div>
     </div>
-    <br>
+    <h1 class="text-center">User Profile</h1>
     <div class="container details">
         <div class="row">
             <div class="col-md-4" id="imgcard">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="card-body">
                         <span class="name"><i class="fa fa-user" style="font-size:20px"></i> &nbsp;{{user.login|uppercase}}</span>
-                        <a href="{{user.htmlUrl}}">
+                        <a href="{{user.htmlUrl}}" target="_blank">
                             <button class=" btn btn-sm">
                                 <i class="fab fa-github" style="font-size:20px"></i>
                                  &nbsp;Github
@@ -36,7 +36,7 @@
                     <div class="card-body">
                         <h4>Username: {{user.login}}</h4>
                         <hr>
-                        <a>
+                        <a pageScroll href="#repository">
                             <p><i class="fa fa-file" style="font-size:18px"></i>&nbsp;&nbsp; Repositories:&nbsp;&nbsp;{{user.repos}}</p>
                         </a>
                         <hr>
@@ -51,9 +51,8 @@
             </div>
         </div>
     </div>
-    <br>
-
-    <div class="container allrepos">
+    <h1 class="text-center">User Repositories</h1>
+    <div class="container allrepos " id="repository">
         <div class="card" style="width: 22rem;" class="repo">
             <div class="card-body">
                 <h5 class="card-title"><span class="top">Repo Name:</span> &nbsp;{{repo.name}} </h5>
