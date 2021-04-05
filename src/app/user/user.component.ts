@@ -9,7 +9,7 @@ import {Repo} from '../repo';
 })
 export class UserComponent implements OnInit {
   user!: User;
-  repo!: Repo[];
+  repo!: Repo;
 
   constructor(private http: HttpClient) {
 
@@ -42,8 +42,9 @@ export class UserComponent implements OnInit {
       created_at: Date;
     }
     // tslint:disable-next-line:max-line-length
-    this.http.get<Repos>('https://api.github.com/users/alvynah/repos').subscribe(data => {
+    this.http.get<Repos>('https://api.github.com/repos/alvynah/akanName-website').subscribe(data => {
       // Succesful API request
+      // tslint:disable-next-line:max-line-length
       this.repo = new Repo(data.name, data.description, data.html_url, data.forks, data.watchers_count, data.language, data.created_at);
       console.log(Repo);
     });

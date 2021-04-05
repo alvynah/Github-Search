@@ -41,3 +41,7 @@ input:hover ::placeholder {
 .allrepos {
     background-color: white;
 }
+
+.ng-progress {
+    position: absolute;
+}
