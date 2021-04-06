@@ -1,3 +1,29 @@
 .content {
     margin-top: 250px;
 }
+
+.repo {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    margin-bottom: 2%;
+    border-radius: 4px;
+    box-shadow: 10px 10px 10px black;
+}
+
+hr {
+    background-color: black;
+    height: 1 px;
+}
+
+.allrepos {
+    padding-top: 10px;
+    border-radius: 2%;
+    border-top: 1px solid grey;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.btn-group {
+    margin-left: 3%;
+}

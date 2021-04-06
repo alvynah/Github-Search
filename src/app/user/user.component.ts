@@ -13,14 +13,8 @@ export class UserComponent implements OnInit {
 
   user!: User;
   repo!: Repo;
-  findUser(username: string) {
-    this.searchName = username;
-    this.ngOnInit();
-  }
-  getRepo(username: string){
-   this.searchName = username;
-    this.ngOnInit();
-  }
+  
+  
   constructor(public searchRepo: SearchRequestService, public searchRequst: SearchRequestService) {
 
   }
