@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavbarComponent,
     UserComponent,
     RepositoryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
