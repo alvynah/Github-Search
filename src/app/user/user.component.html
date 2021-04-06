@@ -1,19 +1,5 @@
 <div class="content">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-10">
-                <form class="form-inline" #searchForm='ngForm' ngNativeValidate>
-                    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Github Username e,g Alvynah...." name="search" aria-label="Search">
-                    <button class="btn btn-info  btn-sm">
-                         <i class="fab fa-search" aria-hidden="true"></i>
-                            Search
-                    </button>
-                </form>
-            </div>
-            <div class="col-sm-1"></div>
-        </div>
-    </div>
+    <app-search-form></app-search-form>
     <h1 class="text-center">User Profile</h1>
     <div class="container details">
         <div class="row">
@@ -38,7 +24,7 @@
                     <div class="card-body">
                         <h4>Username: {{user.login}}</h4>
                         <hr>
-                        <a pageScroll href="#repository">
+                        <a pageScroll href="#repository" id="repository">
                             <p><i class="fa fa-file" style="font-size:18px"></i>&nbsp;&nbsp; Repositories:&nbsp;&nbsp;{{user.repos}}</p>
                         </a>
                         <hr>
@@ -53,7 +39,7 @@
             </div>
         </div>
     </div>
-    <h1 class="text-center" id="repository">User Repositories</h1>
+    <h1 class="text-center">User Repositories</h1>
     <div class="container allrepos ">
         <div class="card" style="width: 22rem;" class="repo" *ngFor='let repo of searchRepo.newRepo'>
             <div class="card-body">

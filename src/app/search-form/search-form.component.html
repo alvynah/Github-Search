@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <form class="form-inline" #searchForm='ngForm' (ngSubmit)="findUser(searchName); getRepos(searchName)" ngNativeValidate>
+                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Github Username e,g Alvynah...." name="search" [(ngModel)]="searchName" required>
+                <button class="btn btn-outline-info  btn-sm" type="submit">
+                    <i class="fab fa-search" aria-hidden="true"></i>
+                    Search
+                </button>
+            </form>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
