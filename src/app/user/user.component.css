@@ -60,3 +60,7 @@ hr {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+.btn-group {
+    margin-left: 3%;
+}

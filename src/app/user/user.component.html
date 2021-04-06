@@ -72,7 +72,7 @@
             </div>
             <div class="card-footer">
                 <div class="btn-group" role="group" aria-label="Third group">
-                    <button class="btn btn-sm btn-info">
+                    <button class="btn btn-sm btn-outline-info">
                         <i class="fa fa-eye" style="font-size:16px"></i> &nbsp;
                         <span class="forks">{{repo.watchers_count}}</span>
                     </button>
@@ -84,11 +84,11 @@
                     </button>
                 </div>
                 <div class="btn-group" role="group" aria-label="Third group">
-                    <button class="btn btn-sm btn-success" id="visit">
-                        <a href="{{repo.html_url}}" class="card-link" target="_blank">VIEW &nbsp; 
-                            <i class="fa fa-arrow-circle-right" style="font-size:16px"></i>
-                        </a>
-                     </button>
+                    <a href="{{repo.html_url}}" class="card-link" target="_blank">
+                        <button class="btn btn-sm btn-outline-success" id="visit">
+                            VIEW &nbsp; <i class="fa fa-arrow-circle-right" style="font-size:16px"></i>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
