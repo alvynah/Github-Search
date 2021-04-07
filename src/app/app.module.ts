@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgProgressModule } from '@ngx-progressbar/core';
-import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -30,8 +28,6 @@ import { SearchFormComponent } from './search-form/search-form.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgProgressModule.forRoot(),
-    NgProgressHttpClientModule,
     Ng2PageScrollModule,
   ],
   providers: [],
