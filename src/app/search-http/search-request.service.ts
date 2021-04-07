@@ -94,11 +94,11 @@ export class SearchRequestService {
       this.http.get<repobyName>('https://api.github.com/search/repositories?q=' + repoName + '?order=created&sort=asc?acess_token= +' + environment.myKey + 'page=1&per_page=100').toPromise().then(
         (result) => {
           this.reposByName.name = result.name;
-          this.reposByName.htmlUrl = result.html_url;
+          this.reposByName.html_url = result.html_url;
           this.reposByName.description = result.description;
           this.reposByName.forks = result.forks;
-          this.reposByName.watchersCount = result.watchers_count;
-          this.reposByName.createdAt = result.created_at;
+          this.reposByName.watchers_count = result.watchers_count;
+          this.reposByName.created_at = result.created_at;
           this.reposByName.language = result.language;
           resolve(0);
           console.log(result);
@@ -106,7 +106,7 @@ export class SearchRequestService {
           const repositoryData = this.arrayData[2];
 
           const convertRepositoryData =
-            repositoryData[Object.keys(repositoryData)[1]];
+          repositoryData[Object.keys(repositoryData)[1]];
           this.reposResult = convertRepositoryData;
           console.log(this.reposResult);
 

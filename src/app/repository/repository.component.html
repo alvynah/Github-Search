@@ -26,9 +26,9 @@
                     <div class="card-subtitle mb-2">
                         <span class="top">Language: </span> {{repo.language}}
                     </div>
-                    <div class="card-subtitle mb-2"><span class="top">Created:&nbsp; <span id="created">{{repo.createdAt
+                    <div class="card-subtitle mb-2"><span class="top">Created:&nbsp; <span id="created">{{repo.created_at
                             |date|dateCount}}</span> &nbsp; On:</span>
-                        &nbsp;{{repo.createdAt | date}}
+                        &nbsp;{{repo.created_at | date}}
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div class="btn-group" role="group" aria-label="Third group">
                     <button class="btn btn-sm btn-outline-info">
                     <i class="fa fa-eye" style="font-size:16px"></i> &nbsp;
-                    <span class="forks">{{repo.watchersCount}}</span>
+                    <span class="forks">{{repo.watchers_count}}</span>
                 </button>
                 </div>
                 <div class="btn-group" role="group" aria-label="Third group">
@@ -46,7 +46,7 @@
                 </button>
                 </div>
                 <div class="btn-group" role="group" aria-label="Third group">
-                    <a href="{{repo.htmlUrl}}" class="card-link" target="_blank">
+                    <a href="{{repo.html_url}}" class="card-link" target="_blank">
                         <button class="btn btn-sm btn-outline-success" id="visit">
                         VIEW &nbsp; <i class="fa fa-arrow-circle-right" style="font-size:16px"></i>
                     </button>
