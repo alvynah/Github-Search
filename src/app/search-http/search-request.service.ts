@@ -99,7 +99,8 @@ export class SearchRequestService {
           this.reposByName.createdAt = result.created_at;
           this.reposByName.language = result.language;
           resolve(0);
-          console.log(result)
+          console.log(result);
+          this.newSearch=result;
 
         },
         (error) => {
