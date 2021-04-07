@@ -11,7 +11,7 @@ This is a website application generated with generated with [Angular CLI](https:
 This is a github search website which allows a user to search for someone's profile using their username.It also allows a user to search for repositories. This is made possible by github APIs.
 
 # Live site
-[Github-Search]
+[Github-Search](https://gittysearch.netlify.app/)
 
 ## Project Setup Instructions
 * Open Terminal {Ctrl+Alt+T}
