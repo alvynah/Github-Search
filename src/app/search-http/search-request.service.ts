@@ -10,8 +10,10 @@ export class SearchRequestService {
   user: User;
   repo: Repo;
   newRepo: any;
-  newSearch:any;
+  newSearch: any;
   reposByName: Repo;
+  arrayData: any;
+  reposResult: Repo[];
 
 
   constructor(private http: HttpClient) {
@@ -62,7 +64,7 @@ export class SearchRequestService {
     }
     const promise = new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
-      this.http.get<Repos>('https://api.github.com/users/' + searchName + '/repos?order=created&sort=asc?acess_token= +' + environment.myKey +'page=1&per_page=1000').toPromise().then(
+      this.http.get<Repos>('https://api.github.com/users/' + searchName + '/repos?order=created&sort=asc?acess_token= +' + environment.myKey + 'page=1&per_page=1000').toPromise().then(
         (result) => {
           this.newRepo = result;
           resolve(0);
@@ -89,7 +91,7 @@ export class SearchRequestService {
     }
     const promise = new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
-      this.http.get<repobyName>('https://api.github.com/search/repositories?q=' + repoName + '?order=created&sort=asc?acess_token= +' + environment.myKey +'page=1&per_page=100').toPromise().then(
+      this.http.get<repobyName>('https://api.github.com/search/repositories?q=' + repoName + '?order=created&sort=asc?acess_token= +' + environment.myKey + 'page=1&per_page=100').toPromise().then(
         (result) => {
           this.reposByName.name = result.name;
           this.reposByName.htmlUrl = result.html_url;
@@ -100,7 +102,13 @@ export class SearchRequestService {
           this.reposByName.language = result.language;
           resolve(0);
           console.log(result);
-          this.newSearch=result;
+          this.arrayData = Object.entries(result);
+          const repositoryData = this.arrayData[2];
+
+          const convertRepositoryData =
+            repositoryData[Object.keys(repositoryData)[1]];
+          this.reposResult = convertRepositoryData;
+          console.log(this.reposResult);
 
         },
         (error) => {

@@ -10,6 +10,7 @@ import { Repo } from '../repo';
 export class RepositoryComponent implements OnInit {
  public  repoName = 'pizza';
   reposByName!: Repo;
+  arrayData: any;
 
 
   // tslint:disable-next-line:typedef
@@ -27,7 +28,7 @@ export class RepositoryComponent implements OnInit {
   ngOnInit() {
     this.searchService.searchRepos(this.repoName);
     this.reposByName = this.searchService.reposByName;
-    console.log(this.reposByName)
+
  }
 
 }
