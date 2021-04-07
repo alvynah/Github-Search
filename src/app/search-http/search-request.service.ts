@@ -91,7 +91,7 @@ export class SearchRequestService {
     }
     const promise = new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
-      this.http.get<repobyName>('https://api.github.com/search/repositories?q=' + repoName + '?order=created&sort=asc?acess_token= +' + environment.myKey + 'page=1&per_page=100').toPromise().then(
+      this.http.get<repobyName>('https://api.github.com/search/repositories?q=' + repoName ).toPromise().then(
         (result) => {
           this.reposByName.name = result.name;
           this.reposByName.html_url = result.html_url;
