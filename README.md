@@ -1,6 +1,33 @@
-# GithubSearch
+# Author
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+[Alvynah Wabwoba](https://github.com/alvynah)
+
+# Github-Search
+
+This is a website application generated with generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+
+# Description
+
+This is a github search website which allows a user to search for someone's profile using their username.It also allows a user to search for repositories. This is made possible by github APIs.
+
+# Live site
+[Github-Search]
+
+## Project Setup Instructions
+* Open Terminal {Ctrl+Alt+T}
+* git clone https://github.com/alvynah/Github-Search.git
+* cd Github-Search
+* code .(for Vs Code) or atom .(for Atom)
+
+1. Ensure you have installed Angular CLI and all its dependencies.
+2. Ensure you are working in the right directory all through.
+## Technologies Used
+1. HTML5
+2. CSS
+3. BootStrap
+4. TypeScript
+5. Markdown
+## Behaviour Driven Development
 
 ## Development server
 
@@ -21,6 +48,12 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Contact Information
+For any further inquiries or contributions or comments, reach me at [Alvynah](juvatalvynah@gmail.com)
+
+### License
+[MIT License](https://github.com/alvynah/Github-Search/blob/master/LICENSE) Copyright (c) {2021} 
 
 ## Further help
 
