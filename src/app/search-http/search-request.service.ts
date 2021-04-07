@@ -9,11 +9,15 @@ import { Repo } from '../repo';
 export class SearchRequestService {
   user: User;
   repo: Repo;
-  newRepo:any;
+  newRepo: any;
+  newSearch:any;
+  reposByName: Repo;
+
 
   constructor(private http: HttpClient) {
     this.user = new User('', 0, 0, 0, '', new Date(), '');
     this.repo = new Repo('', '', '', 0, 0, '', new Date());
+    this.reposByName = new Repo('', '', '', 0, 0, '', new Date());
    }
    findUser(searchName: string){
 
@@ -26,7 +30,7 @@ export class SearchRequestService {
        created_at: Date;
        html_url: string;
    }
-     let promise = new Promise((resolve, reject) => {
+     const promise = new Promise((resolve, reject) => {
        this.http.get<ApiResponse>('https://api.github.com/users/' + searchName + '?acess_token= + ' + environment.myKey).toPromise().then(
          (result) => {
            this.user.login = result.login;
@@ -56,9 +60,9 @@ export class SearchRequestService {
       language: string;
       created_at: Date;
     }
-    let promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
-      this.http.get<Repos>('https://api.github.com/users/' + searchName + '/repos?order=created&sort=asc?acess_token= +' + environment.myKey).toPromise().then(
+      this.http.get<Repos>('https://api.github.com/users/' + searchName + '/repos?order=created&sort=asc?acess_token= +' + environment.myKey +'page=1&per_page=1000').toPromise().then(
         (result) => {
           this.newRepo = result;
           resolve(0);
@@ -69,7 +73,42 @@ export class SearchRequestService {
         }
       );
     });
-    console.log(promise)
+    console.log(promise);
     return promise;
   }
+  // tslint:disable-next-line:typedef
+  searchRepos(repoName) {
+    interface repobyName {
+      name: string;
+      html_url: string;
+      description: string;
+      forks: number;
+      watchers_count: number;
+      language: string;
+      created_at: Date;
+    }
+    const promise = new Promise((resolve, reject) => {
+      // tslint:disable-next-line:max-line-length
+      this.http.get<repobyName>('https://api.github.com/search/repositories?q=' + repoName + '?order=created&sort=asc?acess_token= +' + environment.myKey +'page=1&per_page=100').toPromise().then(
+        (result) => {
+          this.reposByName.name = result.name;
+          this.reposByName.htmlUrl = result.html_url;
+          this.reposByName.description = result.description;
+          this.reposByName.forks = result.forks;
+          this.reposByName.watchersCount = result.watchers_count;
+          this.reposByName.createdAt = result.created_at;
+          this.reposByName.language = result.language;
+          resolve(0);
+          console.log(result)
+
+        },
+        (error) => {
+          console.log(error);
+          reject();
+        }
+      );
+    });
+    console.log(promise);
+    return promise;
+}
 }

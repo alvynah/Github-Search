@@ -10,7 +10,7 @@ import { SearchRequestService } from '../search-http/search-request.service';
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
- searchName='';
+ searchName='alvynah';
  user!:User;
  repo!:Repo;
   // tslint:disable-next-line:typedef
@@ -23,6 +23,7 @@ export class SearchFormComponent implements OnInit {
     this.searchName = username;
     this.ngOnInit();
   }
+  
   constructor(public searchRepo: SearchRequestService, public searchRequst: SearchRequestService) {
 
   }

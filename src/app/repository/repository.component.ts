@@ -8,18 +8,26 @@ import { Repo } from '../repo';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-  public searchName = 'alvynah';
+ public  repoName = 'pizza';
+  reposByName!: Repo;
 
-  repo!: Repo;
 
-
-  constructor(public searchRepo: SearchRequestService) {
+  // tslint:disable-next-line:typedef
+  searchRepos(username: string) {
+    this.repoName = username;
+    this.ngOnInit();
+    this.repoName = '';
+  }
+  constructor(public searchService: SearchRequestService) {
 
   }
 
-  ngOnInit(): void {
-    this.searchRepo.getRepos(this.searchName);
-    this.repo = this.searchRepo.repo;
-  }
+
+
+  ngOnInit() {
+    this.searchService.searchRepos(this.repoName);
+    this.reposByName = this.searchService.reposByName;
+    console.log(this.reposByName)
+ }
 
 }

@@ -1,6 +1,21 @@
 <div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <form class="form-inline" #getRepoForm='ngForm' (ngSubmit)="searchRepos(repoName);getRepoForm.resetForm({})" ngNativeValidate>
+                    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Github Reposiroty Name e,g Pizza...." name="search" [(ngModel)]="repoName" required>
+                    <button class="btn btn-outline-info  btn-sm" type="submit">
+                        <i class="fab fa-search" aria-hidden="true"></i>
+                        Search
+                    </button>
+                </form>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
     <div class="container allrepos ">
-        <div class="card" style="width: 22rem;" class="repo" *ngFor='let repo of searchRepo.newRepo'>
+        <div class="card" style="width: 22rem;" class="repo" *ngFor='let repo of searchService.newSearch'>
             <div class="card-body">
                 <h5 class="card-title"><span class="top">Repo Name:</span> &nbsp;{{repo.name}} </h5>
                 <div class="card-text">
