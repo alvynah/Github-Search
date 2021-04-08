@@ -41,7 +41,7 @@
     </div>
     <h1 class="text-center">User Repositories</h1>
     <div class="container allrepos ">
-        <div class="card" style="width: 22rem;" class="repo" *ngFor='let repo of searchRepo.newRepo'>
+        <div class="card" style="width: 22rem;" class="repo" *ngFor='let repo of searchRepo.newRepo' appHighlight>
             <div class="card-body">
                 <h5 class="card-title"><span class="top">Repo Name:</span> &nbsp;{{repo.name}} </h5>
                 <div class="card-text">
