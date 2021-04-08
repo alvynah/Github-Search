@@ -21,6 +21,7 @@ export class SearchRequestService {
     this.repo = new Repo('', '', '', 0, 0, '', new Date());
     this.reposByName = new Repo('', '', '', 0, 0, '', new Date());
    }
+   // tslint:disable-next-line:typedef
    findUser(searchName: string){
 
      interface ApiResponse {
@@ -52,6 +53,7 @@ export class SearchRequestService {
      });
      return promise;
   }
+  // tslint:disable-next-line:typedef
   getRepos(searchName: string) {
     interface Repos {
       name: string;
@@ -80,6 +82,7 @@ export class SearchRequestService {
   }
   // tslint:disable-next-line:typedef
   searchRepos(repoName) {
+    // tslint:disable-next-line:class-name
     interface repobyName {
       name: string;
       html_url: string;
@@ -101,14 +104,12 @@ export class SearchRequestService {
           this.reposByName.created_at = result.created_at;
           this.reposByName.language = result.language;
           resolve(0);
-          console.log(result);
+
           this.arrayData = Object.entries(result);
           const repositoryData = this.arrayData[2];
-
           const convertRepositoryData =
           repositoryData[Object.keys(repositoryData)[1]];
           this.reposResult = convertRepositoryData;
-          console.log(this.reposResult);
 
         },
         (error) => {

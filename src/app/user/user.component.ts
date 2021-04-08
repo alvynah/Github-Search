@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
 
   user!: User;
   repo!: Repo;
-   
+
   constructor(public searchRepo: SearchRequestService, public searchRequst: SearchRequestService) {
 
   }
